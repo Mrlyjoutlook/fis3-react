@@ -3,17 +3,16 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {Router,browserHistory} from 'react-router';
 import configureStore from './store/configureStore';
+import App from './components/App';
 
 const store = configureStore(browserHistory)
 
 const rootRoute = {
-  childRoutes: [{
-    path: '/',
-    component: require('./components/App'),
-    childRoutes: [
-      require('./routes/me'),
-    ]
-  }]
+  path: '/',
+  component: App, 		
+  childRoutes: [
+  	require('./routes/me'),
+  ]
 }
 
 render(

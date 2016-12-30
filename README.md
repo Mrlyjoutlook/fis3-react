@@ -1,13 +1,16 @@
 #React,FIS3
-Construction of react application based on fis3
+Construction of react application based on fis3.
+
+why not use webpack？
+
+相对整个前端项目工程化问题，单单靠webpack还是不够，FIS3和webpack在定位上不一样的，FIS3是相对于整个前端项目工程化的构建，webpack则是对于SPA和模块管理打包，算是工程化的一部分。FIS3解决webpack一些无法满足的地方，同样的，没有webpack一些吸引人和好用的地方，以上纯属于个人观点。webpack和gulp都用过，一直在寻找对于不同应用的项目适合自己解决方案。这个项目算是author(本人)对FIS3的上手和对前端工程化探索。
 
 ##Npm Script
 - `打包` npm run dist
 - `本地开发测试` npm start(ctr+c 只会停止文件监听，并不会停止本地服务器)
 - `代码风格检测` npm run lint
-- `清楚打包目录` npm run clean
+- `清除打包目录` npm run clean
 - `停止本地开发测试服务器` npm stop
-
 
 ##Features
 
@@ -27,7 +30,7 @@ Construction of react application based on fis3
 --reducers  //redux reducers
 --routes  //按路由结构划分组件及目录
 --store   //redux store
---util
+--util  //自行发挥
 --index.js
 -static
 --lib  //类库，如jq,loadsh
@@ -83,3 +86,11 @@ server.conf 配置文件 [官方文档](http://fis.baidu.com/fis3/docs/node-mock
 - `目标文件` 设置转发的目标地址，需要配置一个可请求的 url 地址。
 
 eg:http://127.0.0.1:8080/api/user
+
+##FIS3构建React工程 遗留问题
+- 按需加载，使用amd requirejs本地开发可以实现按需加载，打包时候在于`fis.match('::package', {packager:[fis.plugin('deps-pack',{})})`的配置问题。如果自己写的话，小项目可以应付的来，大项目的话这个地方相当麻烦。如何实现自动化，正在解决...
+- 前端路由跳转后刷新，找不到对应路由。问题点应该在于SPA的路由和本地服务器端路由不是同一层，可能需要SPA->SSR才行，或者换本地服务器？。但项目定位为SPA的构建项目。正在解决...
+
+如果有哪位同学发现或者已经解决可以一起探讨下。lssues
+
+rep正在继续完善途中...

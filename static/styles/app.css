@@ -1,0 +1,15 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+  	color: #fff;
+  	background: #222;
+}
+.app{
+	margin-top: 20px;
+	text-align: center;
+}
+.app img{
+	border-radius: 25px;
+}

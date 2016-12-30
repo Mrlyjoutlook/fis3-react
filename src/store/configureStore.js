@@ -7,8 +7,7 @@ export default function configureStore(history, initialState) {
   
   createStoreWithMiddleware=compose(
     applyMiddleware(
-      thunk,
-      routerMiddleware(history)
+      thunk
     )
   )(createStore)
 

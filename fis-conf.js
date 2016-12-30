@@ -86,11 +86,11 @@ fis.media('prod')
     packager:[fis.plugin('deps-pack',{
       'resource/common.js': [
          '/src/index.js:deps',  // 将 /src/index.js 的依赖项加入队列，包含了 /src 中的依赖项 和 /node_modules 中的依赖项
-          '!/src/**'  // 移除 /src/** 只保留 /node_module 中的依赖项
+         '!/src/**'  // 移除 /src/** 只保留 /node_module 中的依赖项
       ],
       'resource/app.js':[
           '/src/index.js',  // 将 /src/index.js 加入队列
-          '/src/index.js:deps'  // 将 /app/index/js 的所有依赖项加入队列，因为第一步中已经命中了 /node_module 中的所有依赖项，因此这里只打包 /src 中的依赖项
+          '/src/index.js:deps'  // 将 /src/index.js 的所有依赖项加入队列，因为第一步中已经命中了 /node_module 中的所有依赖项，因此这里只打包 /src 中的依赖项
       ],
       'resource/lib.js': '/static/lib/**.js',
       'resource/app.css': '/static/styles/**.{less,css}'
