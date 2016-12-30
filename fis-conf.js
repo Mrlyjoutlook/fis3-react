@@ -94,5 +94,7 @@ fis.media('prod')
       ],
       'resource/lib.js': '/static/lib/**.js',
       'resource/app.css': '/static/styles/**.{less,css}'
-    }),fis.plugin('map')],
+    }),fis.plugin('map',{
+      useSourceMap:true
+    })],
   });

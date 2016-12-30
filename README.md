@@ -1,7 +1,7 @@
 #React,FIS3
 Construction of react application based on fis3
 
-##npm script
+##Npm Script
 - `打包` npm run dist
 - `本地开发测试` npm start(ctr+c 只会停止文件监听，并不会停止本地服务器)
 - `代码风格检测` npm run lint
@@ -14,6 +14,26 @@ Construction of react application based on fis3
 - support es6,jsx
 - support redux,react-router
 - support less
+
+##Directory Structure
+
+```
+-dist  //执行npm run dist打包后文件目录
+-mock  //mock模拟数据
+-src
+--action  //建议相关的types和action为一个文件
+--components
+--config   // 自行发挥
+--reducers  //redux reducers
+--routes  //按路由结构划分组件及目录
+--store   //redux store
+--util
+--index.js
+-static
+--lib  //类库，如jq,loadsh
+--styles  //样式
+--images  //图片
+```
 
 #FIS3
 解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题
@@ -51,7 +71,7 @@ FIS3 是基于文件对象进行构建的，每个进入 FIS3 的文件都会实
 - !xxx 叹号打头的规则，会把命中的文件，从现有的列表中去除。
 
 
-##mock
+##mock 假数据模拟
 server.conf 配置文件 [官方文档](http://fis.baidu.com/fis3/docs/node-mock.html)
 
 ```
@@ -61,3 +81,5 @@ server.conf 配置文件 [官方文档](http://fis.baidu.com/fis3/docs/node-mock
 - `指令名称` 支持 rewrite 、 redirect 和 proxy。
 - `正则规则` 用来命中需要作假的请求路径。
 - `目标文件` 设置转发的目标地址，需要配置一个可请求的 url 地址。
+
+eg:http://127.0.0.1:8080/api/user
