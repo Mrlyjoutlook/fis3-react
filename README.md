@@ -21,21 +21,22 @@ why not use webpack？
 ##Directory Structure
 
 ```
--dist  //执行npm run dist打包后文件目录
--mock  //mock模拟数据
--src
---action  //建议相关的types和action为一个文件
---components
---config   // 自行发挥
---reducers  //redux reducers
---routes  //按路由结构划分组件及目录
---store   //redux store
---util  //自行发挥
---index.js
--static
---lib  //类库，如jq,loadsh
---styles  //样式
---images  //图片
+fis3-react/
+├── dist/  //执行npm run dist打包后文件目录  
+├── mock/  //mock模拟数据
+├── src/
+│     ├── action/  //建议相关的types和action为一个文件
+│     ├── components/
+│     ├── config/  // 自行发挥
+│     ├── reducers/  //redux reducers
+│     ├── routes/  //按路由结构划分组件及目录
+│     ├── store/  //redux store
+│     ├── util/  //自行发挥
+│     └── routes.js
+├──static/
+│     ├──lib/  //类库，如jq,loadsh
+│     ├── styles/  //样式
+│     └── images/  //	图片
 ```
 
 #FIS3
