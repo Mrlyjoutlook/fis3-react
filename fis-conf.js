@@ -23,7 +23,7 @@ fis.hook('node_modules', {
 
 fis.match('/{node_modules, src}/**.{js,jsx}', {
   isMod: true, //设置成是模块化 js
-  // useSameNameRequire: true, 
+  useSameNameRequire: true,
   rExt: '.js', // 产出后缀为 js
   parser:fis.plugin('babel-6.x',{
     sourceMaps: true
@@ -90,7 +90,12 @@ fis.media('prod')
       ],
       'resource/app.js':[
           '/src/index.js',  // 将 /src/index.js 加入队列
-          '/src/index.js:deps'  // 将 /src/index.js 的所有依赖项加入队列，因为第一步中已经命中了 /node_module 中的所有依赖项，因此这里只打包 /src 中的依赖项
+          '/src/index.js:deps',  // 将 /src/index.js 的所有依赖项加入队列，因为第一步中已经命中了 /node_module 中的所有依赖项，因此这里只打包 /src 中的依赖项
+          // '!/src/routes/me/components/Me.js'
+      ],
+      'resource/me.js':[
+        '/src/routes/me/components/Me.js',
+        '/src/routes/me/components/Me.js:deps'
       ],
       'resource/lib.js': '/static/lib/**.js',
       'resource/app.css': '/static/styles/**.{less,css}'
